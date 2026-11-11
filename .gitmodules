@@ -1,0 +1,4 @@
+[submodule "ggml/ggml"]
+	path = ggml/ggml
+	url = https://github.com/ggml-org/ggml
+	ignore = dirty

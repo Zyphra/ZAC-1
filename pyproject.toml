@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zyphra-zac"
+version = "0.1.0"
+description = "ZAC-1 (Zyphra Audio Codec 1): 44.1 kHz speech codec, 15 Hz x 10 codebooks of 4096, PyTorch and torch.hub"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Zyphra" }]
+requires-python = ">=3.10"
+dependencies = ["torch>=2.5", "torchaudio>=2.5", "transformers>=4.56", "safetensors>=0.4",
+                "huggingface_hub>=0.30", "numpy"]
+
+[project.urls]
+Repository = "https://github.com/Zyphra/ZAC-1"
+Weights = "https://huggingface.co/Zyphra/ZAC-1"
+"Blog post" = "https://www.zyphra.com/our-work/zonos3-mini#training-and-architecture-details"
+
+[dependency-groups]
+dev = ["pytest", "gguf==0.19.0", "soundfile"]
+
+[tool.setuptools.packages.find]
+include = ["zac*"]
+
+[tool.uv]
+# Development lock: torch/torchaudio 2.9.1 (PyPI's Linux wheels are the cu128 build) and the versions below.
+# Constraints apply only when this repo is the uv project, never to consumers.
+constraint-dependencies = ["torch==2.9.1", "torchaudio==2.9.1", "transformers==4.57.3",
+                           "safetensors==0.7.0", "huggingface-hub==0.36.0", "pytest==9.0.2", "numpy<2.4"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
