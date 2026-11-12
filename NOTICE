@@ -1,0 +1,42 @@
+ZAC-1 (Zyphra Audio Codec 1)
+Copyright (c) 2026 Zyphra, Inc.
+
+Licensed under the Apache License, Version 2.0 (LICENSE). This product includes third-party components under their
+own licenses. The MIT license texts are reproduced in licenses/.
+
+Wav2Vec2-BERT 2.0 speech encoder weights (facebook/w2v-bert-2.0)
+  The first 16 layers, in the teacher.* tensors of zac-1-encoder.safetensors and in the ssl-teacher GGUF.
+  Copyright (c) Meta Platforms, Inc. and affiliates.
+  MIT License (licenses/w2v-bert-2.0-MIT.txt)
+
+descript-audio-codec 1.0.0 (https://github.com/descriptinc/descript-audio-codec)
+  zac/layers.py (WNConv1d, Snake1d, VectorQuantize, ResidualVectorQuantize), adapted.
+  Copyright (c) 2023-present, Descript
+  MIT License (licenses/descript-audio-codec-MIT.txt)
+
+EnCodec (https://github.com/facebookresearch/encodec)
+  zac/s1.py: the padding helpers unpad1d, get_extra_padding_for_conv1d and pad1d.
+  Copyright (c) Meta Platforms, Inc. and affiliates.
+  MIT License (licenses/encodec-MIT.txt)
+
+MOSS-Audio-Tokenizer-v2 (OpenMOSS-Team)
+  The architecture reference for the transformer stages in zac/moss.py.
+  Apache License, Version 2.0
+
+ggml (https://github.com/ggml-org/ggml)
+  The ggml/ggml submodule; ggml/patches modify it at configure time.
+  Copyright (c) 2023-2026 The ggml authors
+  MIT License (licenses/ggml-MIT.txt)
+
+pocketfft (https://gitlab.mpcdf.mpg.de/mtr/pocketfft)
+  ggml/vendor/pocketfft_hdronly.hpp
+  Copyright (C) 2010-2024 Max-Planck-Society
+  Copyright (C) 2019-2020 Peter Bell
+  For the odd-sized DCT-IV transforms:
+    Copyright (C) 2003, 2007-14 Matteo Frigo
+    Copyright (C) 2003, 2007-14 Massachusetts Institute of Technology
+  For the prev_good_size search:
+    Copyright (C) 2024 Tan Ping Liang, Peter Bell
+  For the safeguards against integer overflow in good_size search:
+    Copyright (C) 2024 Cris Luengo
+  BSD 3-Clause License (the full text is in the file's header)
