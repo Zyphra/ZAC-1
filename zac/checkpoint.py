@@ -41,7 +41,7 @@ def read_checkpoint(path: str | os.PathLike, kind: str) -> tuple[dict, dict[str,
                 "build one with scripts/build_checkpoint.py"
             )
         if metadata.get("kind") != kind:
-            raise ValueError(f"{path} is a ZAC-1 {metadata.get('kind')} checkpoint, not a {kind} checkpoint")
+            raise ValueError(f"{path} is a ZAC-1 {metadata.get('kind')!r} checkpoint; expected kind {kind!r}")
         for name in handle.keys():
             prefix, _, rest = name.partition(".")
             if prefix not in groups or not rest:
